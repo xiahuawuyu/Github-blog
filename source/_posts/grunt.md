@@ -1,7 +1,9 @@
 categories: 自动化工具
 title: Grunt入门
 date: 2015-06-07 21:13:16
-tags: Grunt
+tags: 
+- Grunt
+- 前端工具
 ---
 #1. 安装grunt
 	npm i -g grunt
