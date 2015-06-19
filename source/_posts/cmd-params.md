@@ -1,7 +1,7 @@
 title: node.js基础教程(2)：命令行参数
 date: 2015-06-16 23:58:29
 tags:
-- nodes.js
+- node.js
 - learnyounode
 categories: node.js
 ---

@@ -1,7 +1,7 @@
 title: node.js基础教程(1)：helloworld
 date: 2015-06-16 00:35:26
 tags:
-- nodes.js
+- node.js
 - learnyounode
 categories: node.js
 -------
