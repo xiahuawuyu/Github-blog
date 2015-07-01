@@ -22,13 +22,13 @@ categories: node.js
 
 在 fs 中，所有的同步（或者阻塞）的操作文件系统的方法名都会以 'Sync' 结尾。要读取一个文件，将需要使用  ```fs.readFileSync('/path/to/file')``` 方法。这个方法会返回一个包含文件完整内容的 Buffer 对象。
 
-[fs模块API文档](https://nodejs.org/api/fs.html)
+(fs模块API文档)[https://nodejs.org/api/fs.html]
 
 Buffer 对象是 Node 用来高效处理数据的方式，无论该数据是 ascii 还是二进制文件，或者其他的格式。Buffer 可以很容易地通过调用 ```toString()``` 方法转换为字符串。如：
 
 	var s tr = buf.toString()。
 
-[Buffer模块API文档](https://nodejs.org/api/buffer.html)
+(Buffer模块API文档)[https://nodejs.org/api/buffer.html]
 
 简单地计算行数方法，可以使用.split() 分割成子字符串数组，'\n'可以作为分隔符。
 

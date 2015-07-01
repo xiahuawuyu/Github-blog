@@ -26,11 +26,11 @@ fs.readdir() 方法接收两个参数：第一个是一个路径，第二个则�
 
 这里的 list 是一个数组，它所包含的元素是每个文件的文件名（字符串形式）。
 
-( fs模块API文档 ) [ file://D:\Work\Nodejs\node_modules\learnyounode\node_apidoc\fs.html ]
+[fs模块API文档](https://nodejs.org/api/fs.html)
 
 node 自带的 path 模块也很有用，特别是它那个 extname 方法。
 
-( path模块API文档 ) [ file://D:\Work\Nodejs\node_modules\learnyounode\node_apidoc\path.html ]
+[path模块API文档](https://nodejs.org/api/path.html)
 
 -----
 
