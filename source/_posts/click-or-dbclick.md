@@ -6,7 +6,6 @@ categories:
 - js
 
 ---
-{% img /source/_posts/click-or-dbclick/keyboard.jpg %}
 
 ## 场景
 
@@ -204,3 +203,4 @@ IE8以下的浏览器判断双击事件的时间比其它浏览器要长，连�
 
 ## 效果
 
+{% asset_img keyboard.jpg %}
