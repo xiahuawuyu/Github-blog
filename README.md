@@ -1,2 +1,2 @@
 # Github-blog
-[yalishizhude的博客](yalishizhude.github.io)
+[yalishizhude的博客](http://yalishizhude.github.io)
