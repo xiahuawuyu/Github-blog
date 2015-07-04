@@ -20,7 +20,7 @@ categories: node.js
 
 [http模块API文档](file://D:\Work\Nodejs\node_modules\learnyounode\node_apido\http.html)
 
-```http.get()``` 方法是用来发起简单的 GET 请求的快捷方式，使用这个方法可以一定程度简化你的程序。```http.get()```的第一个参数是GET 的URL，第二个参数则是回调函数。
+```http.get()``` 方法是用来发起简单的 GET 请求的快捷方式，使用这个方法可以一定程度简化程序。```http.get()```的第一个参数是GET 的URL，第二个参数则是回调函数。
 
 与其他的回调函数不同，这个回调函数有如下这些特征：
 
