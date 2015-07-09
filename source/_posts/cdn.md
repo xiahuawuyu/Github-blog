@@ -9,7 +9,7 @@ categories: IT技术
 
 Content Delivery Network 内容分发网络
 通过在现有的Internet中增加一层新的网络架构，将网站的内容发布到最接近用户的网络"边缘"（节点服务器），使用户可以就近取得所需的内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度
-
+<!-- more -->
 ## CDN的架构
 
 CDN网络分为中心和边缘（节点）

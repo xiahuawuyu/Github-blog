@@ -36,13 +36,14 @@
 
     <div id="footer" class="footer">
       <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴<br>
         {% include '_partials/footer.swig' %}
       </div>
     </div>
 
     <div class="back-to-top"></div>
   </div>
-
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script type="text/javascript" src="{{ url_for(theme.vendors) }}/jquery/index.js?v=2.1.3"></script>
 
   {# This block is used to set options before any other scripts run #}

@@ -8,6 +8,7 @@ tags:
 #1. 安装grunt
 	npm i -g grunt
 	npm i -g grunt-cli
+<!-- more -->
 #2. 编写插件配置文件package.json
 	{
 	  "name": "my-project-name",

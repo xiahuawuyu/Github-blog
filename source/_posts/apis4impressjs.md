@@ -14,8 +14,7 @@ impressjs就是为html文件添加css3动画，变成类似ppt效果的工具，
 [github主页](https://github.com/impress/impress.js)
 
 [demo页面](http://bartaz.github.io/impress.js/)
-
-
+<!-- more -->
 ## impressjs API开发
 
 ### 起因
