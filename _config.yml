@@ -7,7 +7,7 @@ title: 亚里士朱德的博客
 subtitle: Arisjutle's wisdom
 description: 阅读，学习，积累，分享
 author: 亚里士朱德
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -71,3 +71,6 @@ deploy:
   type: git
   repo: https://github.com/yalishizhude/yalishizhude.github.io.git
   branch: master
+
+#百度站长统计
+baidu_analytics: weH21azGfC
