@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NexT
 
 > 精于心，简于形
@@ -256,3 +257,6 @@ First things first, always keep things simple.
 [jquery-url]: http://jquery.com/
 [velocity-image]: https://img.shields.io/badge/Velocity-1.2-2BAF2B.svg?style=flat-square
 [velocity-url]: http://julian.com/research/velocity/
+=======
+
+>>>>>>> origin/master

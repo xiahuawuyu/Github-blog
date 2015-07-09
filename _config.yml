@@ -72,5 +72,20 @@ deploy:
   repo: https://github.com/yalishizhude/yalishizhude.github.io.git
   branch: master
 
+<<<<<<< HEAD
 #百度站长统计
 baidu_analytics: weH21azGfC
+=======
+#建站时间
+since: 2015
+#头像
+avatar: https://avatars0.githubusercontent.com/u/3870098?v=3&s=460
+# Social links
+social:
+  github: https://github.com/yalishizhude
+# title, chinese available
+links_title: Links
+# links
+links:
+  Hexo: http://hexo.io/zh-cn/
+>>>>>>> origin/master
