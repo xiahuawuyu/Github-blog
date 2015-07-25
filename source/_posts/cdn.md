@@ -1,6 +1,8 @@
 title: cdn简介
 date: 2015-07-04 20:13:41
-tags: cdn
+tags: 
+- cdn
+- 开发者头条
 categories: IT技术
 
 ---
@@ -49,3 +51,5 @@ CDN的cache软件遵循http(https)协议，缓存时间由文件header头的Cach
 阿里云：手动刷新目录和文件。腾讯：设置缓存时间自动刷新。
 
 [ppt下载](https://github.com/yalishizhude/CDN-representation)
+
+感谢[开发者头条](http://toutiao.io/)推荐本文
