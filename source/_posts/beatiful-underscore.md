@@ -1,15 +1,14 @@
-title: 优雅的underscore.js
+title: 优雅的underscore
+date: 2015-08-02 22:56:05
 tags:
-  - js
-  - underscore.js
+- js
+- underscore.js
 categories: js
-date: 2015-08-02 22:34:44
 ---
 
+*Less write,less bug.*
 
-* Less write,less bug. *
-
-* Don't repeat it. *
+*Don't repeat it.*
 
 这是我写代码奉行的原则，而underscore.js很好地体现了上面两句话的精髓。
 
@@ -18,6 +17,10 @@ date: 2015-08-02 22:34:44
 >他解决了这个问题：“如果我面对一个空白的 HTML 页面，并希望立即开始工作，我需要什么？” 他弥补了 jQuery 没有实现的功能，同时又是 Backbone 必不可少的部分。
 
 “弥补了”、“必不可少”这牛皮吹得有点过了吧，于是了解使用了一下，发现确实是个好工具，于是把常用的几个函数做了一下整理。
+
+<!-- more -->
+
+***
 
 ## 函数
 
@@ -32,7 +35,7 @@ date: 2015-08-02 22:34:44
 	var temp = _.template('<div class="<%=className%>" id="<%=id%>"><%=name%></div>');
 	var str = temp(obj);
 
-像不像ejs？jsp？underscore！如果对`templateSettings`进行设置，可以变成改变模板变量的匹配规则，比如angular爱好者可以通过下面的函数改成{{}}
+像不像ejs？jsp？underscore！如果对`templateSettings`进行设置，可以变成改变模板变量的匹配规则，比如angular爱好者可以通过下面的函数改成花括号
 
 	_.templateSettings = {
 	  interpolate: /\{\{(.+?)\}\}/g
