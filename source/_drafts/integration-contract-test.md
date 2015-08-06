@@ -6,9 +6,11 @@ categories: 全栈
 
 One of the most common cases of using a TestDouble is when you are communicating with an external service. Typically such services are being maintained by a different team, they may be subject to slow, and unreliable networks, and maybe unreliable themselves. That's why a test double is handy, it stops your own tests from being slow and unreliable. But testing against a double always raises the question of whether the double is indeed an accurate representation of the external service, and what happens if the external service changes its contract?
 
->最常用的用到契约测试的场景就是当你需要和外部服务端进行通讯的时候。通常这些服务端由其他的团队维护，依赖低速、不稳定的网络，也可能服务端本身就不稳定。这就是契约测试的存在价值，它防止你的测试代码变得缓慢和不可信赖。
+>最常用的用到契约测试的场景就是当你需要和外部服务端进行通讯的时候。通常这些服务端由其他的团队维护，依赖低速、不稳定的网络，也可能服务端本身就不稳定。这就是契约测试的存在价值，它防止你的测试案例变得缓慢和不可信赖。但是契约测试同时伴随着一个问题：契约测试能否在外部服务端发生改变精确地描述变化的内容。
 
 A good way to deal with this is to run your own tests against the double, but to periodically run a separate set of integration contract tests that checks all the calls against your test doubles return the same results as a call to the external service would. A failure in any of these integration contract tests implies you need to update your test doubles, and probably your code to take into account the service contract change.
+
+一种好的方式来处理这个问题就是
 
 These tests need not be run as part of your regular deployment pipeline. Your regular pipeline is based on the rhythm of changes to your code, but these tests need to be based on the rhythm of changes to the external service. Often running just once a day is plenty.
 
@@ -24,7 +26,6 @@ Integration contract tests check the contract of external service calls, but not
 
 One of the best way to build these test doubles is to use a SelfInitializingFake.
 
->最常用的用到契约测试的场景就是当你需要和外部服务端进行通讯的时候。通常这些服务端由其他的团队维护，可能比较慢、网络
 
 
 原作者：[Martin Fowler](http://baike.baidu.com/link?url=GXIPmep8gTo7MueYdj9Bg6kIEJYxLojUeLrq0s2ORZOty9jdgoc0JrTq1zVMfk5_OiF8wr9kJbaWMkf3wKrkqa)
