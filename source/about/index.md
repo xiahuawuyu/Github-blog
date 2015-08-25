@@ -17,7 +17,7 @@ Github: http://github.com/yalishizhude
 #技能清单
 Web开发：Java/Node
 前端框架：zepto/requirejs/underscore/Bootstrap/AngularJS/JQuery
-前端工具：LESS
+前端工具：LESS/impressjs
 数据库相关：MySQL/Oracle/Sybase
 版本管理、文档和自动化部署工具：Svn/Git/Grunt
 开放平台：微信应用开发
