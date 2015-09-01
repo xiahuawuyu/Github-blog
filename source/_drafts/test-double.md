@@ -4,7 +4,7 @@ tags:
 
 Gerard Meszaros is working on a book to capture patterns for using the various Xunit frameworks. One of the awkward things he's run into is the various names for stubs, mocks, fakes, dummies, and other things that people use to stub out parts of a system for testing. To deal with this he's come up with his own vocabulary which I think is worth spreading further.
 
-Gerard Meszaros正在写一本书整理那些使用“Xunit”框架的测试模式。其中他遇到的一件棘手的事就名字繁多，如：stubs，mocks，fakes，dummies以及其它用来测试系统局部的。为了解决这个问题，他发明一系列我认为值得被广泛传播的自创词汇。
+Gerard Meszaros正在写一本书整理那些使用“Xunit”框架的测试模式。其中他遇到的一件棘手的事就是名字繁多，如：stubs，mocks，fakes，dummies以及其它用来测试系统局部的。为了解决这个问题，他发明一系列我认为值得被广泛传播的自创词汇。
 
 The generic term he uses is a Test Double (think stunt double). Test Double is a generic term for any case where you replace a production object for testing purposes. There are various kinds of double that Gerard lists:
 

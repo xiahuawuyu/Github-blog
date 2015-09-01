@@ -45,3 +45,8 @@ node 自带的 path 模块也很有用，特别是它那个 extname 方法。
 	      console.log(file)
 	  })
 	})
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

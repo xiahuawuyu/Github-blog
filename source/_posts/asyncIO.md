@@ -35,3 +35,8 @@ categories: node.js
 	    if(err) throw err;
 	    console.log(data.toString().split('\n').length-1);
 	});
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

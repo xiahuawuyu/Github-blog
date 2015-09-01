@@ -8,3 +8,8 @@ categories: IT技术
 
 ### Git
 * [使用百度网盘+Git，把版本控制托管到云端](http://www.mamicode.com/info-detail-175353.html)
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

@@ -54,11 +54,8 @@ categories: node.js
       foo(function (err, data) {
         if (err)
           return callback(err) // 尽早返回错误
-
         // ... 没有错误，处理 `data`
-
         // 一切顺利，传递 null 作为 callback 的第一个参数
-
         callback(null, data)
       })
     }
@@ -72,11 +69,9 @@ categories: node.js
     var filterFn = require('./solution_filter.js')
     var dir = process.argv[2]
     var filterStr = process.argv[3]
-
     filterFn(dir, filterStr, function (err, list) {
       if (err)
         return console.error('There was an error:', err)
-
       list.forEach(function (file) {
         console.log(file)
       })
@@ -86,17 +81,17 @@ categories: node.js
 
     var fs = require('fs')
     var path = require('path')
-
     module.exports = function (dir, filterStr, callback) {
-
       fs.readdir(dir, function (err, list) {
         if (err)
           return callback(err)
-
         list = list.filter(function (file) {
           return path.extname(file) === '.' + filterStr
         })
-
         callback(null, list)
       })
     }
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

@@ -36,3 +36,8 @@ categories: node.js
 		result += Number(process.argv[i])
 
 	console.log(result)
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

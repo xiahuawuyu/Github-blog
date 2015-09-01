@@ -39,3 +39,7 @@ Buffer 对象是 Node 用来高效处理数据的方式，无论该数据是 asc
 	var fs = require('fs');
 	var res = fs.readFileSync(process.argv[2], 'utf-8');
 	console.log(res.split('\n').length-1);
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

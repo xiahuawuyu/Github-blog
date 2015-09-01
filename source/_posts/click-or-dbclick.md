@@ -204,3 +204,7 @@ IE8以下的浏览器判断双击事件的时间比其它浏览器要长，连�
 ## 效果
 
 {% asset_img keyboard.jpg %}
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

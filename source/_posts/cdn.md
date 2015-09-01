@@ -2,7 +2,6 @@ title: cdn简介
 date: 2015-07-04 20:13:41
 tags: 
 - cdn
-- 开发者头条
 categories: IT技术
 
 ---
@@ -52,4 +51,6 @@ CDN的cache软件遵循http(https)协议，缓存时间由文件header头的Cach
 
 [ppt下载](https://github.com/yalishizhude/CDN-representation)
 
-感谢[开发者头条](http://toutiao.io/)推荐本文
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

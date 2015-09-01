@@ -85,3 +85,7 @@ shim很重要，处理了导出名称和依赖关系。第1个zepto模块的全�
 * 公用代码形成模块后方便调用
 * 避免各个模块冲突
 * 可以良好地处理依赖关系
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

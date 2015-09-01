@@ -45,6 +45,8 @@ xp没什么好吐槽的，老系统了，还比较稳定。
 *难度：*\****
 *方案：*
 身份证校验这个功能很多帖子都讲了算法，不复杂，js代码如下：
+
+```
     /* 复杂验证！ */
     var province = '11;12;13;14;15;21;22;23;31;32;33;34;35;36;37;41;42;43;44;45;46;50;51;52;53;54;61;62;63;64;65;71;81;82;91;';
     var iSum = 0;
@@ -58,6 +60,10 @@ xp没什么好吐槽的，老系统了，还比较稳定。
     for (var i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(value.charAt(17 - i), 11);
     if (iSum % 11 !== 1)return false;//"Error:非法证号";
     return true;
+```
+
 触控效果比较难搞，之前考虑用a标签的active样式来做点击效果，但是由于IE8的双击判断间隔有问题，具体问题参见我的另一篇[博客](http://yalishizhude.github.io/2015/07/01/click-or-dbclick/)。后来用dblclick双击事件来调用click事件，pc端上没有问题，部署到终端机的时候还是显示迟钝，效果不理想。改用mousedown和mouseup效果也不好。有更好的方法请告知我~
 
-* 
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

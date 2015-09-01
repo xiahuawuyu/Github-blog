@@ -41,3 +41,7 @@ nodeschool上的教程比较多，也不全是关于node.js的，我翻译的13�
 11. [文件服务器](http://yalishizhude.github.io/2015/07/10/file-server/)
 12. [大写转换器](http://yalishizhude.github.io/2015/07/11/2uppercase/)
 13. [JSON API服务器](http://yalishizhude.github.io/2015/07/11/json-api/)
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
