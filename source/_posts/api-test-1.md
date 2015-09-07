@@ -27,6 +27,9 @@ js全栈也是我所看好的，用一种语言解决前后端开发，降低了
 怎么能保证两边开发的东西能接合在一起呢？嗯，是有接口文档这么个东西。之所以说“有这么个东西”，是因为它仅仅是一个文档，常常出现更新不及时、双方都与文档出现偏差的现象。
 有没有办法解决接口的问题？看完了破狼[关于swagger的介绍](http://www.cnblogs.com/whitewolf/p/4686154.html)，以及[martin fowler](http://baike.baidu.com/link?url=4mWjIAhtru1TH5QHkXpBzB3vRWPb7uJFTDwavQdaZxGqoUXQ0-yy6I95Z3hZ0XRyUbyV3VhG1_LPZN5i8L8hg_)关于契约测试的介绍，解决方法和工具都已具备，所以解决方案应该还是存在的。
 
+*阅读链接*
+
+[接口调试（中）—— 解决方案构想](http://yalishizhude.github.io/2015/09/01/api-test-2/)
 - - -  
 >原文作者：亚里士朱德
 >博客网址：http://yalishizhude.github.io
