@@ -119,3 +119,7 @@ categories: js
 
 具体代码不写了，可以参考API文档中关于[$watch](http://docs.angularjs.cn/api/ng/type/$rootScope.Scope#$watch)的说明
 
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

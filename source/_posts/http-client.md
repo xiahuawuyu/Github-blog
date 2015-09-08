@@ -45,3 +45,8 @@ response 对象是一个 Node 的 Stream 类型的对象，可以将 Node Stream
       response.on('data', console.log);
       response.on('error', console.error);
     });
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

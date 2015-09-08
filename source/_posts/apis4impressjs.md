@@ -107,3 +107,8 @@ impress().showProgress();
 ### 大结局
 
 预知后事如何，可以[点击](https://github.com/impress/impress.js/pull/487)查看我提交的版本以及作者的回复
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

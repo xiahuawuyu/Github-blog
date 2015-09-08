@@ -30,3 +30,8 @@ categories: node.js
 恭喜正式进入node.js世界~
 
 node.js不仅仅为前端工程师转为全栈插上了翅膀，同时它还可以写桌面app，cs程序...总之它很强大，你值得学习~
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

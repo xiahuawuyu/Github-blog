@@ -64,6 +64,9 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 theme: next
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -89,3 +92,9 @@ links:
   开发者头条: http://toutiao.io/
 
 duoshuo_shortname: yalishizhude
+
+# feed
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 0

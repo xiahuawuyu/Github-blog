@@ -231,3 +231,8 @@ js并行写法
 	[1, 2, 3, -4, 5, 6]
 
 更多内容请查看[API文档](http://www.bootcss.com/p/underscore)
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

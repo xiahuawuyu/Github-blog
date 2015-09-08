@@ -105,3 +105,8 @@ categories: node.js
     for (var i = 0; i < 3; i++)
 		httpGet(i)
 ```
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
