@@ -19,8 +19,10 @@ tags:
 `hint: 'git pull ...') before pushing again.`
 `hint: See the 'Note about fast-forwards' in 'git push --help' for details.`
 先切换分支，然后拉取分支上最新的代码覆盖到本地
-`git pull origin master`
-
+`git pull`
+添加或者提交代码，解决冲突之后
+`git push`
+    
 4. 拉取分支
 
 `git checkout -b <branch_name>  本地建立 branch 並立即 checkout 切換過去`
