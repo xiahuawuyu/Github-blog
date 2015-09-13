@@ -34,3 +34,7 @@ tags:
 5. 本地分支与远程分支建立关联关系
 
 `git branch -t <remote branch>`
+
+6. 跳过暂存的方法
+
+`git commit -a -m 'xx'`
