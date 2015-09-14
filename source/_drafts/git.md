@@ -27,14 +27,13 @@ tags:
 
 `git checkout -b <branch_name>  本地建立 branch 並立即 checkout 切換過去`
 `git branch -m <new_name>  修改分支名称`  
-=======
+
 title: git
 tags:
 
 5. 本地分支与远程分支建立关联关系
 
 `git branch -t <remote branch>`
-
 
 6. 从远程仓库拉取代码到本地仓库
 
@@ -126,3 +125,8 @@ tags:
 ## 设置缓存
 `git config --global credential.helper wincred`
 开启windows缓存
+
+6. 跳过暂存的方法
+
+`git commit -a -m 'xx'`
+
