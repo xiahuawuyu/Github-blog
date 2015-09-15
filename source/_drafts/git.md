@@ -82,6 +82,9 @@ tags:
 `git push <remote base> <remote branch>:<local branch>`
 将本地分支推送到指定的远程分支
 
+`git push <remote base> --delete <remote branch>`
+删除远程分支
+
 ### tag
 查看标签（用来标记标志性的稳定版本信息）
 
@@ -101,12 +104,19 @@ tags:
 `git merge <branch name>`
 将其他分支合并到本分支
 
+### commit
+`git commit -a -m 'xx'`
+暂存并提交
+
 ### branch
 `git branch`
 查看本地仓库分支
 
 `git branch -v`
 查看本地仓库分支最后一次提交情况
+
+`git branch -vv`
+查看跟踪分支
 
 `git branch <branch name>`
 新建分支
@@ -117,16 +127,31 @@ tags:
 `git branch [--merged | --no-merged]`
 查看已合并|未合并的本地仓库分支
 
+`git branch -u <remote base>/<remote branch>`
+修改跟踪分支
 
-## 进阶
+### checkout
 
-## 设置别名
+`git checkout --track <remote base>/<remote branch>`
+`git checkout -b <local branch> <remote base>/<remote branch>`
+让当前分支跟踪到远程分支。两条命令作用基本一致，不同的是第二条命令可以重命名检出的分支。
 
-## 设置缓存
+## 小技巧
+
+### 查看配置
+`git config -1`
+
+### 设置别名
+`git config --global alias.<name> <commend>`  
+
+### 保存用户名和密码
+
+#### 对于http(s)协议，可以用下面命令临时缓存
+`git config --global credential.helper cache`
+开启linux缓存
 `git config --global credential.helper wincred`
 开启windows缓存
+#### 对于ssh协议，可以用ssh  key，具体教程网上很多
 
-6. 跳过暂存的方法
 
-`git commit -a -m 'xx'`
 
