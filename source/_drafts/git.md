@@ -72,6 +72,9 @@ tags:
 `git remote rename <old basename> <new basename>`
 重命名远程仓库
 
+### pull
+相当于fetch和merge
+
 ### push
 `git push [remote_branch] [local_branch]`
 推送本地仓库代码到远程仓库，相当于svn的commit
@@ -81,6 +84,9 @@ tags:
 
 `git push <remote base> <remote branch>:<local branch>`
 将本地分支推送到指定的远程分支
+
+`git push <remote base> --delete <remote branch>`
+删除远程分支
 
 ### tag
 查看标签（用来标记标志性的稳定版本信息）
@@ -108,6 +114,9 @@ tags:
 `git branch -v`
 查看本地仓库分支最后一次提交情况
 
+`git branch -vv`
+查看分支跟踪情况
+
 `git branch <branch name>`
 新建分支
 
@@ -116,6 +125,21 @@ tags:
 
 `git branch [--merged | --no-merged]`
 查看已合并|未合并的本地仓库分支
+
+### commit 
+`git commit -a -m 'xx'`
+跳过暂存的方法
+
+### checkout
+`git checkout -b [local branch] [remote base]/[remote branch]`
+将远程分支检出到本地分支
+
+`git checkout --track <remote base>/<remote branch>`
+让当前分支跟踪远程分支
+
+`git branch -u <remote base>/<remote branch>`
+修改当前跟踪分支
+
 
 
 ## 进阶
@@ -126,7 +150,4 @@ tags:
 `git config --global credential.helper wincred`
 开启windows缓存
 
-6. 跳过暂存的方法
-
-`git commit -a -m 'xx'`
 
