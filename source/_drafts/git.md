@@ -107,6 +107,10 @@ tags:
 `git merge <branch name>`
 将其他分支合并到本分支
 
+### commit
+`git commit -a -m 'xx'`
+暂存并提交
+
 ### branch
 `git branch`
 查看本地仓库分支
@@ -126,6 +130,9 @@ tags:
 `git branch [--merged | --no-merged]`
 查看已合并|未合并的本地仓库分支
 
+`git branch -u <remote base>/<remote branch>`
+修改当前跟踪分支
+
 ### commit 
 `git commit -a -m 'xx'`
 跳过暂存的方法
@@ -137,17 +144,27 @@ tags:
 `git checkout --track <remote base>/<remote branch>`
 让当前分支跟踪远程分支
 
-`git branch -u <remote base>/<remote branch>`
-修改当前跟踪分支
 
+`git checkout --track <remote base>/<remote branch>`
+`git checkout -b <local branch> <remote base>/<remote branch>`
+让当前分支跟踪到远程分支。两条命令作用基本一致，不同的是第二条命令可以重命名检出的分支。
 
+## 小技巧
 
-## 进阶
+### 查看配置
+`git config -1`
 
-## 设置别名
+### 设置别名
+`git config --global alias.<name> <commend>`  
 
-## 设置缓存
+### 保存用户名和密码
+
+#### 对于http(s)协议，可以用下面命令临时缓存
+`git config --global credential.helper cache`
+开启linux缓存
 `git config --global credential.helper wincred`
 开启windows缓存
+#### 对于ssh协议，可以用ssh  key，具体教程网上很多
 
+ 
 
