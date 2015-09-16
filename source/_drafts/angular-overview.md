@@ -37,6 +37,6 @@ tags:
         Costs: <input type="number" min="0" ng-model="cost">
       </div>
       <div>
-        <b>Total:</b> {{qty * cost | currency}}
+        <b>Total:</b> \{\{qty * cost | currency\}\}
       </div>
     </div>

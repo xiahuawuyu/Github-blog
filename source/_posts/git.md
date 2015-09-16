@@ -1,19 +1,35 @@
-title: git新手指南
-tags:
+categories: 前端工具
+title: git学习总结
+date: 2015-09-16 20:38:47
+tags: 
+- git
+- 前端工具
 ---
 
-### 从另一个远程分支上获取某个文件（夹）到当前分支
+## 从svn到git
 
-1. 查看所有分支，包括本地建立的分支和远程服务器上的分支
+两者都是优秀的版本管理工具（giter请不要鄙视svner）
+* svn上手非常容易，操作简单
+* git功能强大，但是要熟练使用分支不算容易
 
+git因为是分布式的，所以其核心就是分支（只有master分支情况下和svn差不多？），分支的意义在于，可以将项目代码按照功能、模块拆分成不同的分支。比如这个产品要加一个支付功能和一个登陆功能，可以创建两个分支，交给不同的开发人员并行开发。登陆功能先开发完，测试无误后合并改分支到master分支，master分支部署上线。支付功能虽然没有开发完成，但是在另一条分支上，所以产品上线和功能开发完全不受影响。这才是分布式开发的高效模式。
+
+被git坑了一个星期之后决心把官方文档看一下，结合实践经验进行了整理。
+
+- - -
+
+<!-- more -->
+
+## 新手常见问题
+
+1. 如何查看有哪些分支？
 `git branch -a`
 
-2. 签出/切换分支或分支指定文件
+2. 如何强制检出/切换分支或分支指定文件
+`git checkout <branch> [file] [-f]`
+强制更新，以branch版本的代码为主
 
-`git checkout <branch> [file] [-f]{强制更新，以branch版本的代码为主}`
-
-3. 切换分支后提交代码出现冲突
-
+3. 提交代码出现冲突冲突怎么办？
 `hint: Updates were rejected because the tip of your current branch is behind`
 `hint: its remote counterpart. Integrate the remote changes (e.g.`
 `hint: 'git pull ...') before pushing again.`
@@ -23,39 +39,25 @@ tags:
 添加或者提交代码，解决冲突之后
 `git push`
     
-4. 拉取分支
+4. 如何新建分支
+`git checkout -b <branch_name>`  
+本地建立 branch 並立即切換到新分支
+`git branch -m <new_name>`
+修改分支名称  
 
-`git checkout -b <branch_name>  本地建立 branch 並立即 checkout 切換過去`
-`git branch -m <new_name>  修改分支名称`  
 
-title: git
-tags:
-
-5. 本地分支与远程分支建立关联关系
-
-`git branch -t <remote branch>`
-
-6. 从远程仓库拉取代码到本地仓库
-
+5. 从远程仓库拉取代码到本地仓库，并建立跟踪关系
 `git clone http://xxx.git`
 或者
 `get clone git@xxx.git`
-
 然后
 `git checkout -b <本地新分支名> <对应的远程分支名>`
 
 
-## 指令大全
+## 实用指令
 ### reset
 `git reset [file]` 
 取消暂存 
-
-###
-`git checkout -- [file]` 
-恢复文件
-
-`git checkout -b [branchname] [tagname]`
-在特定的版本上创建一个新的分支并切换到此分支
 
 ### remote 
 查看远程仓库名 
@@ -135,9 +137,15 @@ tags:
 
 ### commit 
 `git commit -a -m 'xx'`
-跳过暂存的方法
+提交并且暂存暂存的方法
 
 ### checkout
+`git checkout -- [file]` 
+恢复文件
+
+`git checkout -b [branchname] [tagname]`
+在特定的版本上创建一个新的分支并切换到此分支
+
 `git checkout -b [local branch] [remote base]/[remote branch]`
 将远程分支检出到本地分支
 
@@ -148,6 +156,10 @@ tags:
 `git checkout --track <remote base>/<remote branch>`
 `git checkout -b <local branch> <remote base>/<remote branch>`
 让当前分支跟踪到远程分支。两条命令作用基本一致，不同的是第二条命令可以重命名检出的分支。
+
+### rebase
+`git rebase [basebranch]` 
+变基是将一系列提交按照原有次序依次应用到另一分支上，而合并是把最终结果合在一起。
 
 ## 小技巧
 
@@ -166,5 +178,8 @@ tags:
 开启windows缓存
 #### 对于ssh协议，可以用ssh  key，具体教程网上很多
 
- 
 
+[权威教程](http://git-scm.com/book/zh/v2)
+
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
