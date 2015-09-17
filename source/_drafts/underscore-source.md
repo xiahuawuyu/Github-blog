@@ -43,3 +43,28 @@ Array,Object,Function这些本质都是函数，获取函数原型属性prototyp
     nativeCreate       = Object.create;
 
 这种定义的方式省略了多余的var，格式也美观，让我想到了sublime中的一个插件alignment。
+
+### 数据判断
+
+    1175 _.isElement = function(obj) {
+        return !!(obj && obj.nodeType === 1);
+      };
+判断是否为dom，dom的nodeType属性值为1。这里用`!!`强转为boolean值
+
+    1181 _.isArray = nativeIsArray || function(obj) {
+        return toString.call(obj) === '[object Array]';
+      };
+判断是否为数组。由于Array.isArray函数是ECMAScript 5新增函数，所以为了兼容之前的版本，在原生判断函数不存在的情况下，后面重写了一个判断函数。用call函数来改变作用域可以避免当obj没有toString函数报错的情况。
+
+    1186 _.isObject = function(obj) {
+        var type = typeof obj;
+        return type === 'function' || type === 'object' && !!obj;
+    };
+判断是否为对象。先用typeof判断数据类型。函数也属于对象，但是由于typeof null也是object，所以用!!obj来区分这种情况。
+
+    1192 _.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function(name) {
+        _['is' + name] = function(obj) {
+          return toString.call(obj) === '[object ' + name + ']';
+        };
+      });
+其它`isXxx`函数的实现方式，用toString强转再进行判断

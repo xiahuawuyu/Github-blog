@@ -22,7 +22,6 @@ W3C主张结构、样式、行为分离
 Javascript中，所有数据类型都有一个默认属性：`__proto__`，这个叫做原型。而该隐藏属性中又包含其它数据对象的`__proto__`，这种原型的嵌套包含就叫原型链。
 
 ### prototype属性有什么作用
-
 本质上，js中的基本数据类型Functoin/Object/Number/Array/boolean都是函数。（用typeof 可以查看）而prototype是函数的专有属性，当该函数被实例化时，prototype属性可以被实例所继承，即
 
     var fun = function(){};
@@ -30,7 +29,6 @@ Javascript中，所有数据类型都有一个默认属性：`__proto__`，这�
     a.__proto__ === fun.prototype; //true
 
 ### 改变作用域的方法
-
 >apply
 通过传入对象参数改变原函数作用域为参数作用域。
 `fun.apply(obj, [a,b,c]);`
@@ -39,6 +37,13 @@ Javascript中，所有数据类型都有一个默认属性：`__proto__`，这�
 同上，不过为不定参数。
 `new`
 通过实例化，将构造函数this指针指向实例函数。
+
+### 判断数据类型的方法
+
++ String.call  
++ typeof
++ instanceOf
++ Array.isArray
 
 ## css
 
