@@ -29,7 +29,7 @@ Javascript中，所有数据类型都有一个默认属性：`__proto__`，这�
     a.__proto__ === fun.prototype; //true
 
 ### 改变作用域的方法
->apply
+`apply`
 通过传入对象参数改变原函数作用域为参数作用域。
 `fun.apply(obj, [a,b,c]);`
 调用fun函数，作用域为obj，参数为a/b/c。
@@ -39,11 +39,20 @@ Javascript中，所有数据类型都有一个默认属性：`__proto__`，这�
 通过实例化，将构造函数this指针指向实例函数。
 
 ### 判断数据类型的方法
++ toString.call 准确判断数据类型：Array、String、Object、RegExp、Number、Undefined、Null、Date、Boolean、Function
++ typeof 粗略判断数据类型：undefined、number、string、boolean、object、function
++ instanceOf 判断一个函数是否为另一个函数的实例。
++ Array.isArray ECMAScript 5 新增方法，用来判断参数是否为数组。
++ isFinite 判断是否为Infinity和null
 
-+ String.call  
-+ typeof
-+ instanceOf
-+ Array.isArray
+### arguments是什么数据类型
+函数内部自动创建的一个类似数组的获取函数实参的隐藏对象。
+
+### caller和callee有什么区别
+`caller`
+函数原型函数，返回该函数的调用函数。当该函数为顶层调用时，返回null
+`callee`
+arguments的默认属性，`arguments.callee`用来指向函数本身，常用在匿名函数和递归函数中。`arguments.callee.length`可以用获取函数形参长度。
 
 ## css
 
@@ -57,15 +66,14 @@ css hack
 >IE7、FF ： height: 100px !important; 
 
 引用注释
-1. <!--[if !IE]><!--> 除IE外都可识别 <!--<![endif]--> 
-2. <!--[if IE]> 所有的IE可识别 <![endif]--> 
-4. <!--[if IE 5]> 仅IE5.0与IE5.5可以识别 <![endif]--> 
-5. <!--[if gt IE 5.0]> IE5.0以及IE5.0以上版本都可以识别 <![endif]--> 
-8. <!--[if gte IE 6]> IE6以及IE6以上版本可识别 <![endif]--> 
-10. <!--[if lt IE 7]> IE7以及IE7以下版本可识别 <![endif]--> 
+><!--[if !IE]><!--> 除IE外都可识别 <!--<![endif]--> 
+><!--[if IE]> 所有的IE可识别 <![endif]--> 
+><!--[if IE 5]> 仅IE5.0与IE5.5可以识别 <![endif]--> 
+><!--[if gt IE 5.0]> IE5.0以及IE5.0以上版本都可以识别 <![endif]--> 
+><!--[if gte IE 6]> IE6以及IE6以上版本可识别 <![endif]--> 
+><!--[if lt IE 7]> IE7以及IE7以下版本可识别 <![endif]--> 
 
 ### css3常用属性
-
 #### border-radius
 圆角属性 
 
@@ -80,3 +88,13 @@ css hack
 
 #### transform 
 样式变换，缩放、旋转、平移
+
+### 清除浮动的方法
+#### clear:both
+浮动元素后建立空元素来清除浮动。非IE浏览器常用before和after伪类来实现。
+#### overflow:auto
+空标签元素清除浮动而不得不增加无意代码的弊端,,使用zoom:1用于兼容IE
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)

@@ -1,4 +1,4 @@
-title: underscore源码经典
+title: js高手进阶之路：underscore源码经典
 tags:
 ---
 
@@ -62,9 +62,26 @@ Array,Object,Function这些本质都是函数，获取函数原型属性prototyp
     };
 判断是否为对象。先用typeof判断数据类型。函数也属于对象，但是由于typeof null也是object，所以用!!obj来区分这种情况。
 
-    1192 _.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function(name) {
-        _['is' + name] = function(obj) {
-          return toString.call(obj) === '[object ' + name + ']';
-        };
-      });
-其它`isXxx`函数的实现方式，用toString强转再进行判断
+    1200 if (!_.isArguments(arguments)) {
+    _.isArguments = function(obj) {
+      return _.has(obj, 'callee');
+    };
+    }
+判断是否为arguments,很简单，arguments有个特有属性callee。
+
+    1225   _.isBoolean = function(obj) {
+    return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
+    };
+是不是以为如果是布尔值不是true就是false？还有第3中情况`var b = new Boolean()`。b也是布尔值。
+
+    1235   _.isUndefined = function(obj) {
+    return obj === void 0;
+    };
+用void 0来表示undefined，非常有意思的小技巧。不过常用方式还是if(xxx)来判断是不是undefined。
+
+`eq`是underscore的一个内置函数，代码太长，不粘贴了。isEmpty调用了这个函数。整个思路由易到难，先用===比较简单数据，然后用toString来判断是否相等，最后用递归处理复杂的Array、Function和Object对象。
+
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
