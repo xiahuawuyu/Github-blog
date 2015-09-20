@@ -1,8 +1,10 @@
-title: js高手进阶之路：underscore源码经典
+title: js高手进阶之路：underscore源码经典（一）
 tags:
 ---
-
 >underscore 源码版本 1.7
+
+### 起因
+很多人向我推荐研究js，可以看看一些第三方js类库的源码，而源码之中最好解读也最简短的就是underscore。而underscore也是我平常比较喜欢的一个库，因为它性价比高，体积小、能力强。打开一看，才1000多行，试着读了一下，很不错，所以整理分享一下。
 
 ### 闭包
 整个函数在一个闭包中，避免污染全局变量。通过传入this（其实就是window对象）来改变函数的作用域。和jquery的自执行函数其实是异曲同工之妙。这种传入全局变量的方式一方面有利于代码阅读，另一方面方便压缩。
@@ -18,7 +20,9 @@ jquery写法：
     (function(window, undefined) {
         ...
     })(window);
+<!-- more -->
 
+- - -
 ### 原型赋值
     18 var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
 
@@ -73,7 +77,7 @@ Array,Object,Function这些本质都是函数，获取函数原型属性prototyp
     return _.isNumber(obj) && obj !== +obj;
       };
 NaN这个值有两个特点：1.它是一个数；2.不等于它自己。
-'+'放在变量前面一般作用是把后面的变量变成一个数，但是在这里已经判断为一个数仍加上'+'，一时没有想通作者深意。
+'+'放在变量前面一般作用是把后面的变量变成一个数，在这里已经判断为一个数仍加上'+'，是为了把`var num = new Number()`这种没有值的数字也归为NaN。
 
     1225   _.isBoolean = function(obj) {
     return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
@@ -115,6 +119,29 @@ NaN这个值有两个特点：1.它是一个数；2.不等于它自己。
     }
 这里是对简单对象进行判断，分为两类，一类是`String`和`RegExp`，这种数据直接`toString`然后判断。另一类是`Number`、`Date`和`Boolean`，通过转换成数字判断。
 
+    1130 aStack.push(a);
+    bStack.push(b);
+    if (areArrays) {
+      length = a.length;
+      if (length !== b.length) return false;
+      while (length--) {
+        if (!eq(a[length], b[length], aStack, bStack)) return false;
+      }
+    } else {
+      var keys = _.keys(a), key;
+      length = keys.length;
+      if (_.keys(b).length !== length) return false;
+      while (length--) {
+        key = keys[length];
+        if (!(_.has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
+      }
+    }
+    aStack.pop();
+    bStack.pop();
+对于数组和对象只能用递归了，同时用aStack和bStack来暂存递归中的子对象。这里一个小技巧的就是先判断数组/属性的长度，如果不相等可以有效地减少递归。
+
 - - - 
 博客：http://yalishizhude.github.io
 作者：[亚里士朱德](http://yalishizhude.github.io/about/)
+
+>感谢[杰微刊](http://www.jointforce.com/jfperiodical/openhome)首发
