@@ -1,20 +1,23 @@
 title: js高手进阶之路：underscore源码经典（一）
+date: 2015-09-22 21:51:10
 tags:
+- js
+- underscore
+categories: js
 ---
+
 >underscore 源码版本 1.7
 
 ### 起因
-很多人向我推荐研究js，可以看看一些第三方js类库的源码，而源码之中最好解读也最简短的就是underscore。而underscore也是我平常比较喜欢的一个库，因为它性价比高，体积小、能力强。打开一看，才1000多行，试着读了一下，很不错，所以整理分享一下。
+很多人向我推荐研究js，可以看看一些第三方js类库的源码，而源码之中最好解读也最简短的就是underscore，它也是我平常比较喜欢的一个库，因为它性价比高：体积小、能力强。打开一看，才1000多行，试着读了一下，确实很值得一看，所以对精彩部分做了一下整理。
 
 ### 闭包
 整个函数在一个闭包中，避免污染全局变量。通过传入this（其实就是window对象）来改变函数的作用域。和jquery的自执行函数其实是异曲同工之妙。这种传入全局变量的方式一方面有利于代码阅读，另一方面方便压缩。
-
 underscore写法：
 
     (function(){
         ...
     }.call(this));
-
 jquery写法：
 
     (function(window, undefined) {
@@ -37,7 +40,6 @@ Array,Object,Function这些本质都是函数，获取函数原型属性prototyp
     a.xxx = ...
 
 一个小建议就是凡事一段代码被使用两次以上都建议定义变量(函数)，有利于修改和压缩代码。
-
 ### 格式
 
     29 var
@@ -47,7 +49,6 @@ Array,Object,Function这些本质都是函数，获取函数原型属性prototyp
     nativeCreate       = Object.create;
 
 这种定义的方式省略了多余的var，格式也美观，让我想到了sublime中的一个插件alignment。
-
 ### 数据判断
 
     1175 _.isElement = function(obj) {
@@ -143,5 +144,3 @@ NaN这个值有两个特点：1.它是一个数；2.不等于它自己。
 - - - 
 博客：http://yalishizhude.github.io
 作者：[亚里士朱德](http://yalishizhude.github.io/about/)
-
->感谢[杰微刊](http://www.jointforce.com/jfperiodical/openhome)首发
