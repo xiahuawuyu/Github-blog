@@ -45,7 +45,6 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 `git branch -m <new_name>`
 修改分支名称  
 
-
 5. 从远程仓库拉取代码到本地仓库，并建立跟踪关系
 `git clone http://xxx.git`
 或者
@@ -53,6 +52,8 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 然后
 `git checkout -b <本地新分支名> <对应的远程分支名>`
 
+6. 远程仓库新建了一个分支，如何更新远程分支信息
+`git fetch <remote base>`
 
 ## 实用指令
 ### reset
