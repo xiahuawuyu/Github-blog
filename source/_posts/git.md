@@ -55,6 +55,12 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 6. 远程仓库新建了一个分支，如何更新远程分支信息
 `git fetch <remote base>`
 
+7. 如何在远程仓库新建一个分支
+`git branch <branch name>`
+新建一个本地分支，按照正常流程提交完代码后，推送到远程
+`git push <remote base> <local branch>:<remote branch>`
+
+
 ## 实用指令
 ### reset
 `git reset [file]` 
