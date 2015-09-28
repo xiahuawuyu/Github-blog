@@ -66,6 +66,51 @@ arguments的默认属性，`arguments.callee`用来指向函数本身，常用�
 `==` 先将两边值转换为同一类型的对象再进行 `===`比较
 `===` 只用于浅拷贝的对象进行比较，不进行对象内容进行比较。只要引用地址不一致，即使内容一致也比较不出来。可以用来比较函数、数组等复杂对象，只是实用性不大。
 
+### 什么是变量提升
+变量在一个范围内声明的时候，javascript引擎会将这个声明移到范围顶部。
+
+    var v='Hello World'; 
+    (function(){ 
+        console.log(v); 
+        var v='I love you'; 
+    })();//undefined
+这段代码等价于
+
+    var v='Hello World'; 
+    (function(){ 
+        var v;
+        console.log(v); 
+        v='I love you'; 
+    })();
+同样，匿名函数也受命名提升的影响
+
+    (function(){ 
+        foo(); 
+        function foo(){ 
+            console.log("我来自 foo"); 
+        } 
+    })(); //我来自 foo
+
+    (function(){ 
+        foo(); 
+        var foo = function(){ 
+            console.log("我来自 foo"); 
+        } 
+    })();//TypeError: foo is not a function
+
+js中有函数作用域但是没有块级作用域。
+
+    var x = 1; 
+    console.log(x); // 1 
+    if (true) { 
+        var x = 2; 
+        console.log(x); //2 
+    } 
+    console.log(x);// 2 
+
+
+[详细介绍](http://www.jb51.net/article/30719.htm)
+
 ## css
 
 ### 浏览器兼容性问题解决方法
