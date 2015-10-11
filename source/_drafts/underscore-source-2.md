@@ -65,3 +65,29 @@ tags:
         return results;
       };
 从代码上看，each函数是包括map函数的，map只能处理对象，each可以处理对象和数组。至于forEach和collect在API文档中看不到，应该是为了兼容以前老版本做的别名处理。
+
+    170 function createReduce(dir) {
+        // Optimized iterator function as using arguments.length
+        // in the main function will deoptimize the, see #1991.
+        function iterator(obj, iteratee, memo, keys, index, length) {
+          for (; index >= 0 && index < length; index += dir) {
+            var currentKey = keys ? keys[index] : index;
+            memo = iteratee(memo, obj[currentKey], currentKey, obj);
+          }
+          return memo;
+        }
+    
+        return function(obj, iteratee, memo, context) {
+          iteratee = optimizeCb(iteratee, context, 4);
+          var keys = !isArrayLike(obj) && _.keys(obj),
+              length = (keys || obj).length,
+              index = dir > 0 ? 0 : length - 1;
+          // Determine the initial value if none is provided.
+          if (arguments.length < 3) {
+            memo = obj[keys ? keys[index] : index];
+            index += dir;
+          }
+          return iterator(obj, iteratee, memo, keys, index, length);
+        };
+      }
+这个是reduce和reduceRight调用的内部函数，将memo这个变量作为入参传递给iterator函数，调用自定义的iteratee函数进行循环处理，每次处理完的结果都赋值给memo变量，最后返回memo变量的结果。
