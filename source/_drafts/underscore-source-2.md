@@ -1,0 +1,67 @@
+title: js高手进阶之路：underscore源码经典（二）
+tags:
+---
+    63 var optimizeCb = function(func, context, argCount) {
+        if (context === void 0) return func;
+        switch (argCount == null ? 3 : argCount) {
+          case 1: return function(value) {
+            return func.call(context, value);
+          };
+          case 2: return function(value, other) {
+            return func.call(context, value, other);
+          };
+          case 3: return function(value, index, collection) {
+            return func.call(context, value, index, collection);
+          };
+          case 4: return function(accumulator, value, index, collection) {
+            return func.call(context, accumulator, value, index, collection);
+          };
+        }
+        return function() {
+          return func.apply(context, arguments);
+        };
+      };
+
+这个函数是underscore内部很重要的函数，主要用来执行函数并改变所执行函数的作用域，最后加了一个argCount参数来指定参数个数，对参数个数小于等于4的情况进行分类处理。对不同参数的解释大概是：
+1的情况一般是用在接受单值的情况，比如times,sortedIndex之类的函数。
+2的情况据说是给比如jQuery,zepto事件绑定，代理什么的，但是在源代码中没有看到被调用。
+3的情况用于迭代器函数，比如foreach,map,pick等。
+4的情况用reduce和reduceRight函数。
+
+    87 var cb = function(value, context, argCount) {
+        if (value == null) return _.identity;
+        if (_.isFunction(value)) return optimizeCb(value, context, argCount);
+        if (_.isObject(value)) return _.matcher(value);
+        return _.property(value);
+      };
+这也是一个比较常用的内部函数，只是对参数进行了判断：如果是函数则返回上面说到的回调函数；如果是对象则返回一个能判断对象是否相等的函数；默认返回一个获取对象属性的函数。
+
+    140 _.each = _.forEach = function(obj, iteratee, context) {
+        iteratee = optimizeCb(iteratee, context);
+        var i, length;
+        if (isArrayLike(obj)) {
+          for (i = 0, length = obj.length; i < length; i++) {
+            iteratee(obj[i], i, obj);
+          }
+        } else {
+          var keys = _.keys(obj);
+          for (i = 0, length = keys.length; i < length; i++) {
+            iteratee(obj[keys[i]], keys[i], obj);
+          }
+        }
+        return obj;
+      };
+    
+      // Return the results of applying the iteratee to each element.
+      _.map = _.collect = function(obj, iteratee, context) {
+        iteratee = cb(iteratee, context);
+        var keys = !isArrayLike(obj) && _.keys(obj),
+            length = (keys || obj).length,
+            results = Array(length);
+        for (var index = 0; index < length; index++) {
+          var currentKey = keys ? keys[index] : index;
+          results[index] = iteratee(obj[currentKey], currentKey, obj);
+        }
+        return results;
+      };
+从代码上看，each函数是包括map函数的，map只能处理对象，each可以处理对象和数组。至于forEach和collect在API文档中看不到，应该是为了兼容以前老版本做的别名处理。
