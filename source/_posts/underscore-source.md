@@ -141,6 +141,8 @@ NaN这个值有两个特点：1.它是一个数；2.不等于它自己。
     bStack.pop();
 对于数组和对象只能用递归了，同时用aStack和bStack来暂存递归中的子对象。这里一个小技巧的就是先判断数组/属性的长度，如果不相等可以有效地减少递归。
 
+>[js高手进阶之路：underscore源码经典（二）](http://yalishizhude.github.io/2015/10/12/underscore-source-2/)
+
 - - - 
 博客：http://yalishizhude.github.io
 作者：[亚里士朱德](http://yalishizhude.github.io/about/)
