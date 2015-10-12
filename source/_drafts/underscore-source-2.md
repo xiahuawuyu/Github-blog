@@ -90,4 +90,6 @@ tags:
           return iterator(obj, iteratee, memo, keys, index, length);
         };
       }
-这个是reduce和reduceRight调用的内部函数，将memo这个变量作为入参传递给iterator函数，调用自定义的iteratee函数进行循环处理，每次处理完的结果都赋值给memo变量，最后返回memo变量的结果。
+这个是reduce和reduceRight调用的内部函数，将memo这个变量作为入参传递给iterator函数，调用自定义的iteratee函数进行循环处理，每次处理完的结果都赋值给memo变量，最后返回memo变量的结果。这里有两个问题
+* 为什么这里不按照常理逻辑来写代码而要用闭包呢？闭包大致有这么几个作用：避免命名冲突；私有化变量；变量持久化。这里的作用主要就是变量（函数）持久化，好处就是重复调用的时候不需要再重新创建函数，从而提升执行速度。
+* 为什么要用两层闭包呢？
