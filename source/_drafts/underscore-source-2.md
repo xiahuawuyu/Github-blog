@@ -94,4 +94,12 @@ tags:
 * 为什么这里不按照常理逻辑来写代码而要用闭包呢？闭包大致有这么几个作用：避免命名冲突；私有化变量；变量持久化。这里的作用主要就是变量（函数）持久化，好处就是重复调用的时候不需要再重新创建函数，从而提升执行速度。
 * 为什么要用两层闭包呢？第一层闭包持久化iterator函数，调用reduce和reduceRight函数避免重复新建函数。第二层闭包保存keys,index,length这些变量。
 
-
+    263 _.invoke = function(obj, method) {
+      var args = slice.call(arguments, 2);
+      var isFunc = _.isFunction(method);
+      return _.map(obj, function(value) {
+        var func = isFunc ? method : value[method];
+        return func == null ? func : func.apply(value, args);
+      });
+    }; 
+这里用`slice.call(arguments, 2)`来获取后面的不定参数，然后用`func.apply(value, args)`来传入该参数比较有意思。
