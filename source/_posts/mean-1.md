@@ -1,4 +1,4 @@
-title: 【译】基于angualrjs、nodejs、mongodb、expressjs的全栈开发实例教程1
+title: 【译】基于MEAN的全栈开发实例教程1
 date: 2015-10-13 00:03:42
 tags:
 - node.js
