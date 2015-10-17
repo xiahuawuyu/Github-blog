@@ -112,9 +112,6 @@ categories: js
     }; 
 这里用`slice.call(arguments, 2)`来获取后面的不定参数，然后用`func.apply(value, args)`来传入该参数比较有意思。
 
-
->[js高手进阶之路：underscore源码经典（一）](http://yalishizhude.github.io/2015/09/22/underscore-source/)
-
 - - - 
 博客：http://yalishizhude.github.io
 作者：[亚里士朱德](http://yalishizhude.github.io/about/)
