@@ -79,3 +79,10 @@ images: images
 
 # Theme version
 version: 0.4.3
+
+# 百度分享服务
+baidushare: true
+# 多说分享服务
+duoshuo_share: true
+# 多说热评文章 true 或者 false
+duoshuo_hotartical: true
