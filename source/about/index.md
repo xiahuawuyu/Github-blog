@@ -7,14 +7,16 @@ Email: yalishizhude@163.com
 QQ: 381355576
 
 # 个人信息
-
-亚里士朱德/男/85后/白羊座
-所在城市：二线省会城市
+男/85后/白羊座
+所在城市：湖南长沙
 毕业时间：2011年
 毕业学校：某985/211大学
 学历：本科
 技术博客：http://yalishizhude.github.io
-Github: http://github.com/yalishizhude 
+Github: http://github.com/yalishizhude
+极客头条: http://geek.csdn.net/user/publishlist/yalishizhude
+开发者头条: http://toutiao.io/subjects/11510
+慕课网: http://www.imooc.com/myclub/article/uid/1098050
 
 #技能清单
 后端语言：Java/Node
