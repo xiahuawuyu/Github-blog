@@ -6,19 +6,19 @@ date: 2015-08-24 22:32:42
 Email: yalishizhude@163.com
 QQ: 381355576
 
-# 个人信息
+# 基本信息
 男/85后/白羊座
 所在城市：湖南长沙
 毕业时间：2011年
 毕业学校：某985/211大学
 学历：本科
-技术博客：http://yalishizhude.github.io
-Github: http://github.com/yalishizhude
-极客头条: http://geek.csdn.net/user/publishlist/yalishizhude
-开发者头条: http://toutiao.io/subjects/11510
-慕课网: http://www.imooc.com/myclub/article/uid/1098050
 
-#技能清单
+# 个人简介
+曾担任JSP全栈工程师，参加过大型OSS项目开发。
+目前为HTML5前端工程师，擅长PC端以及移动端微信页面开发。
+喜欢javascript语言以及node.js、mongoDB等后端、数据库技术。
+
+# 技能清单
 后端语言：Java/Node
 前端框架：zepto/requirejs/underscore/Bootstrap/AngularJS/JQuery
 前端工具：LESS/impressjs/hexo
