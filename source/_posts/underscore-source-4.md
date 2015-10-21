@@ -1,7 +1,9 @@
 title: js高手进阶之路：underscore源码经典（完）
 date: 2015-10-21 22:37:08
 tags:
-categories:
+- js
+- underscore
+categories: js
 ---
 
 
@@ -28,6 +30,8 @@ categories:
 `keys`和`allKeys`这两个函数很有对比意义。
 前者是该对象的枚举属性，先用默认函数处理，再考虑循环遍历，最后考虑老版本浏览器的时候返回默认属性解决方案。
 后者是该对象的枚举属性以及继承的属性，直接进行深度遍历，然后考虑老版本浏览器的时候直接返回默认属性解决方案。
+
+<!-- more -->
 
     31 nativeKeys         = Object.keys,
 `Object`自带的这个`keys`函数来判断对象的枚举属性很方便，不过也是ECMAScript5新增的函数。
