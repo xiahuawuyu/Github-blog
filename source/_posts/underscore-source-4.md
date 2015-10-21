@@ -67,3 +67,7 @@ categories: js
 
 # 总结
 underscore之所以经典，一方面它是一个JavaScript实用库，提供了很多工具函数，可以有效地减少我们的代码量，尤其是在对数组和对象的操作上；另一方面是其体现了JavaScript函数式编程的特点，源码中随处可见函数的嵌套。像函数式编程的无状态、高阶编程这些特点和闭包都有着紧密的联系，所以下一阶段希望能透过JavaScript闭包特性的学习一探函数式编程的精妙。
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
