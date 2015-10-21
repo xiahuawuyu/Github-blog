@@ -29,14 +29,16 @@ Javascript中，所有数据类型都有一个默认属性：`__proto__`，这�
     a.__proto__ === fun.prototype; //true
 
 ### 改变作用域的方法
-`apply`
+#### apply
 通过传入对象参数改变原函数作用域为参数作用域。
 `fun.apply(obj, [a,b,c]);`
 调用fun函数，作用域为obj，参数为a/b/c。
-`call`
+#### call
 同上，不过为不定参数。
-`new`
+#### new
 通过实例化，将构造函数this指针指向实例函数。
+#### bind
+传入参数可以改变做用域甚至绑定参数
 
 ### 判断数据类型的方法
 + toString.call 准确判断数据类型：Array、String、Object、RegExp、Number、Undefined、Null、Date、Boolean、Function
