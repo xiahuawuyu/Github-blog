@@ -72,7 +72,7 @@ categories: js
         }
         return results;
       };
-从代码上看，each函数是包括map函数的，map只能处理对象，each可以处理对象和数组。至于forEach和collect在API文档中看不到，应该是为了兼容以前老版本做的别名处理。
+从代码上看，each函数是用来遍历操作数组/对象，map用来处理数组/对象后并以数组的形式返回结果。至于forEach和collect在API文档中看不到，应该是为了兼容以前老版本做的别名处理。
 
     170 function createReduce(dir) {
         // Optimized iterator function as using arguments.length
