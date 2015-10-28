@@ -2,7 +2,6 @@ title: 【译】基于MEAN的全栈开发实例教程1
 date: 2015-10-13 00:03:42
 tags:
 - node.js
-- learnyounode
 - mean
 categories: node.js
 ---
