@@ -117,7 +117,7 @@ categories: js
 
 ### angular
 
-具体代码不写了，可以参考API文档中关于[$watch](http://docs.angularjs.cn/api/ng/type/$rootScope.Scope#$watch)的说明
+具体代码不写了，可以参考API文档中关于[$watch](http://docs.angularjs.cn/api/ng/type/$rootScope.Scope#$watch)的说明，$q服务也可以实现promise。
 
 
 - - - 
