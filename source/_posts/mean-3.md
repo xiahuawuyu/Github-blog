@@ -1,6 +1,11 @@
-title: 【译】基于MEAN的全栈开发实例教程3
+title: 【译】基于MEAN的全栈开发实例教程3：通过Angular展示数据
 tags:
+  - node.js
+  - mean
+date: 2015-11-02 21:36:35
+categories: node.js
 ---
+
 # 从数据库中查询所有视频
 首先，我们来实现一个简单的功能：在首页上展示数据库中所有的视频。有几种方式来实现这个功能。我们可以从前端到后端开发，也可以反过来。这并没有什么对错，不过在本教程中，处于教学原因我推荐从后端开始开发。
 我们将通过以下几个步骤来实现：
@@ -8,8 +13,11 @@ tags:
 2. 然后我们通过Express在数据库中创建一个API
 3. 最后我们用Angular来调用API并显示这些数据
 如果你对这些技术没有任何经验也并无大碍。在本章节中，将覆盖这些技术的基础知识。然而，学习起来可能会有一点曲折。请保持耐心，因为一旦我们实现了接下来这些功能，在你再次运用这些概念的时候将会变得得心应手。
+
+<!-- more -->
+
 ## 第1步：构建数据库
-我们怎么通过数据文件来构建MongoDB数据库？MongoDB有一个可以通过控制台访问的脚本，然而通过脚本访问并不是很友好，所以为了开发变得简单，我们将用到一个免费的工具——RboMongo。登陆到http://robomong.org然后下载适合你操作系统的安装程序。
+我们怎么通过数据文件来构建MongoDB数据库？MongoDB有一个可以通过控制台访问的脚本，然而通过脚本访问并不是很友好，所以为了开发变得简单，我们将用到一个免费的工具——RboMongo。登陆到 http://robomong.org 然后下载适合你操作系统的安装程序。
 启动RoboMong。你将看见一个用来连接MongoDB服务器的对话框
 {% asset_img robomongo-1.png %}
 点击顶部的 **Create**按钮。
@@ -20,8 +28,8 @@ tags:
 在 **View**菜单中，勾选 **Explorer**选项。现在你的RoboMongo看起来应该是这样：
 {% asset_img robomongo-3.png %}
 在 **Explorer**面板，右键 **localhost**选择 **Create Database**。命名数据库为 **vidzy**。展开 **vidzy**，右键 **Collections**然后点击
- **Create Collection**。在MongoDB中，一个集合就类似于关系型数据库中的一张表。将这个连接命名为 **videos**。然后这个集合就显示在了列表中。
- 接下来右键 **videos**集合然后选择 **Insert Document**。1个文档再MongoDB中类似关系型数据库中的1条记录。而MongoDB文档与之不同的是可以包含其它的文档。在Mongo中，我们使用JSON格式来展现文档。复制粘贴下面的代码到对话框中来新增一个视频文档：
+ **Create Collection**。在MongoDB中，一个集合就类似于关系型数据库中的一张表。将这个集合命名为 **videos**。然后这个集合就显示在了列表中。
+ 接下来右键 **videos** 集合然后选择 **Insert Document**。1个文档再MongoDB中类似关系型数据库中的1条记录。而MongoDB文档与之不同的是可以包含其它的文档。在Mongo中，我们使用JSON格式来展现文档。复制粘贴下面的代码到对话框中来新增一个视频文档：
 
     {
      "title" : "Terminator Genisys",
@@ -92,7 +100,7 @@ tags:
 
 在这里，我们渲染index视图，这个视图在 **views>index.jade**中已经定义了。
 
-这就是一个路由的基础结构。我们现在需要为我们的视频创建一个RESTful API。我们将在1个类似 **/api/videos**的断点中展示我们的视频。
+这就是一个路由的基础结构。我们现在需要为我们的视频创建一个RESTful API。我们将在1个类似 **/api/videos**的端点中展示我们的视频。
 
 在 **routes** 目录下创建1个新的路由模块叫做 **videos.js** ,然后在文件输入以下代码，之后我会对这段代码进行逐行讲解。
 
@@ -226,7 +234,66 @@ Angular是一个用来构建单页应用（SPA）的非常流行的前端框架�
 
 Express Generator生成的默认项目使用了Jade做为视图引擎。这些Jade视图在服务端被解析和渲染成HTML然后返回给客户端。这就是很多网页框架如何工作的。但是在本应用中，我们将使用一种不同的构建风格。我们将返回JSON给客户端（Angular）来渲染视图来替代返回HTML。下面说一说这样做的原因。
 
-开始的时候，在本章关于“什么时候使用Node”中，我提到一种通用的场景：Node擅长在文档数据库上构建基于RESTful APIs的应用。
+开始的时候，在本章关于“什么时候使用Node”中，我提到一种通用的场景：Node擅长在文档数据库上构建基于RESTful APIs的应用。通过这种架构，我们不必把时间花在数据转换上。我们存储JSON对象在Mongo中，通过RESTful API导出它们并且直接在客户端进行展示（通过Angular）。JSON就是Javascript和MongoDB的原生对像。所以用它来贯穿整个技术栈，我们就减少了匹配和转换数据的工作。通过从API返回JSON对象然后在客户端渲染视图，来提高性能和可扩展性。因为服务器的CPU将不会被浪费在为大量并发用户渲染视图上。另外，我们可以重用同样的API去构建另一个客户端，例如Iphone和Android app。
+
+在这一步中，我们将用Angular视图来取代首页上默认的Jade视图。
+
+在 **public** 下创建一个新的叫做 **partials** 的文件夹用来存储视图文件。在这个文件夹下创建一个新的文件 **home.html**，在文件中输入
+
+    <h1>Home Page</h1>
+
+现在，我们需要告诉Angular当跳转到这个首页时渲染这个视图。我们通过Angular路由来实现这个功能。
+
+在 **vidzy.js** 中，改变 **app** 模块的声明如下：
+
+    var app = angular.module('Vidzy', ['ngRoute']);
+
+在依赖数组中我添加了一个 **ngRoute** 的引用。 **ngRoute** 是构建Angular模块中用来配置路由的。
+
+在 **app** 模块声明中写下如下代码：
+
+    app.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/', {
+            templateUrl: 'partials/home.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+    }]);
+
+让我来为你讲解一下。我们使用 **app** 模块的 **config** 方法来为我们的应用提供配置。这个代码将在Angular检测到 **ng-app** 并且视图启动的时候执行。 **config** 方法的参数是一个数组：
+
+    app.config([]);
+
+这个数组可以有0个或更多的依赖以及一个函数来实现配置逻辑。这里我们有一个依赖 **$routeProvider**，这是一个在 **ngRoute** 中国定义的模块。这就是我们修改app模块声明来依赖 **ngRoute** 的原因。配置函数接收 **$routeProvider** 作为一个参数
+
+    app.config(['$routeProvider', function($routeProvider){
+    }]);
+
+在我们的配置函数中，我们使用 **$routeProvider** 的 **when** 方法来配置路由。
+
+    $routeProvider
+        .when('/', {
+            templateUrl: 'partials/home.html'
+        })
+
+第1个参数('/')是相对路径。第2个参数是一个对象，定义了路径对应的视图(通过 **templateUrl**)。我们可以多次调用 **when** 方法，每次定义个不同的路由。最后，我们使用 **otherwise** 方法来声明如果用户浏览其他URLs，将被重定向到根路径('/')。
+
+现在还差一点点。我们只需要做一些小小的改动来时使Jade视图映射到首页。打开 **views>index.jade** 然后改变文件的内容：
+    
+    extends layout
+    
+    block content
+      div(ng-view)
+
+我溢出了视图中之前的内容(Welcom to Express)添加了一个带有 **ng-view** 的 **div**。这个属性告诉Angular在当前dom下渲染视图。通过这个设置，用户首次进入主页时，Jade视图将会在服务端渲染并且返回给客户端。在实际项目中，站点视图将有基础的模板（）例如导航条，logo等）。它也有一个内容区（通过 **ng-view** 声明）由Angular来渲染视图。当用户通过应用来访问页面时，Angular将用不同的Angular视图来替换内容区域。这样避免了整个页面的刷新从而带来了更好的效果。这就是我们称这些应用为单页应用的原因：从本质上说只有一个页面被完整地从服务器下载，然后其他子页面只是简单的用来替换内容区。
+
+注意：我必须再一次强调Jade对空格符非常敏感。在同一个视图中你不能混淆空格和tab键的缩进。Express Genrator默认生成的Jade视图用两个空格键来缩进。确保添加两个空格在 **div(ng-view)** 前面，否则你运行时将报错。
+
+在最后一步之前让我们快速测试一下。回到你的浏览器，输入http://localhost:3000.你将看见我们通过Angular构建的新首页
+
+{% asset_img home.png %}
 
 ## 第5步：实现控制器
 
@@ -289,20 +356,7 @@ Express Generator生成的默认项目使用了Jade做为视图引擎。这些Ja
 
 在下一节中，我们将添加另一个功能到应用中。 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>这一部分的内容很多，翻译花费了很多时间。原文作者写教程的时候确实是很用心的，这也是我答应作者翻译这篇教程的一个原因。如果想看更多教程可以去作者的官网，如果觉得这篇教程不错，还请点个赞~3q~
 
 - - - 
 博客：http://yalishizhude.github.io
