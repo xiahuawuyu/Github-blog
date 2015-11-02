@@ -23,7 +23,7 @@ QQ: 381355576
 前端框架：zepto/requirejs/underscore/Bootstrap/AngularJS/JQuery
 前端工具：LESS/impressjs/hexo
 数据库相关：MySQL/Oracle/Sybase
-版本管理、文档和自动化部署工具：Svn/Git/Grunt
+版本管理、文档和自动化部署工具：Svn/Git/Grunt/Gulp
 开放平台：微信应用开发
 <!-- 单元测试：PHPUnit/SimpleTest/Qunit -->
 <!-- Web框架：ThinkPHP/Yaf/Yii/Lavaral/LazyPHP -->

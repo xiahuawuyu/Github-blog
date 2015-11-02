@@ -134,7 +134,6 @@
     });
   </script>
 {% endif %}
-//百度推送
 <script>
 (function(){
     var bp = document.createElement('script');
