@@ -334,7 +334,7 @@ Express Generator生成的默认项目使用了Jade做为视图引擎。这些Ja
 现在我们需要改变视图来渲染视图中的列表。打开 **partials>home.html** 然后输入代码：
 
     <ul>
-        <li ng-repeat='video in videos'>{{video.title}}</li>
+        <li ng-repeat='video in videos' ng-bind="video.title"></li>
     </ul>
 
 我们用ul和li来渲染视频列表。li标签有一个Angular定义的属性叫做 **ng-repeat**。这些属性在Angular中叫做指令，用来为HTML元素添加一些行为。**ng-repeat**属性的值是一个类似js中foreach的表达式。**videos**变量是我们之前在 **$scope**中定义的属性。**video in videos**表示一次从数组中获取一个video。所以li元素将会被数组中的video对象重复渲染。我们用双花括号来编写表达式。这里我们简单的渲染video对象中的title属性在li标签中。
