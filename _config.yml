@@ -5,7 +5,7 @@
 # Site
 title: 亚里士朱德的博客
 subtitle: Arisjutle's blog
-description: 阅读，学习，积累，分享
+description: 阅读，实践，学习，积累，分享
 author: 亚里士朱德
 language: zh-Hans
 timezone:
@@ -85,9 +85,10 @@ social:
   github: https://github.com/yalishizhude
   博客: http://yalishizhude.github.io
   微博: http://weibo.com/arisjutle
+  慕课网: http://www.imooc.com/myclub/article/uid/1098050
+  伯乐在线: http://www.jobbole.com/members/yalishizhude
   极客头条: http://geek.csdn.net/user/publishlist/yalishizhude
   开发者头条: http://toutiao.io/subjects/11510
-  慕课网: http://www.imooc.com/myclub/article/uid/1098050
 # title, chinese available
 links_title: Links
 # links
