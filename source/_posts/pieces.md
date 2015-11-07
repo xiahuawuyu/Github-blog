@@ -193,6 +193,11 @@ css hack
 #### overflow:auto
 空标签元素清除浮动而不得不增加无意代码的弊端,,使用zoom:1用于兼容IE
 
+### 隐藏标签的方法
+* display:none 完全隐藏
+* visibility:hidden 隐藏但保留占位空间
+
+
 ## 工具
 ### chrome调试工具
 #### ctrl+shift+f 
