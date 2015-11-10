@@ -36,8 +36,6 @@
 
     <div id="footer" class="footer">
       <div class="footer-inner">
-        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
-        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
         {% include '_partials/footer.swig' %}
       </div>
     </div>
