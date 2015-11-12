@@ -1,19 +1,25 @@
-title: JQuery2Angular
+title: 从JQuery到Angular的一次改版
 tags:
+  - JQuery
+  - Angular
+date: 2015-11-13 06:43:15
+categories: Angular
 ---
 
 # 前言
 
 最近主要在对之前的流程进行改版优化，之前一直使用的JQuery来实现，因为考虑到Angular在可移植性、可维护性、耦合性方面都优于JQuery，缺点就是学习成本比较高，不过之前一直在微信端使用Angular，所以这一点也不成问题。于是探坑之旅就这样开始了...
 
+<!-- more -->
+
 # 代码量
 
-### JQuery
+## JQuery
 
 体积：84.6k（html 20.2k，js 64.4k）
 文件数：9（4个html，5个js）
 
-### Angular
+## Angular
 
 体积：95.1k（html 39.7k，js 55.4k）
 文件：12（5个html，7个js）
@@ -27,11 +33,11 @@ tags:
 整个业务流程分为3个步骤，每个步骤完成之后才能进入下个步骤，所有步骤完成之后才可以提交给后端。
 最简单的实现方法是把每个步骤做成表单放在一个页面里面，所有表单完成后抽取整合放在ajax里进行提交。这样实现的话容易造成代码的耦合性提高从而可维护性降低，并不是最佳的实现方式。所以对于JQuery和Angular分别采取了不同的实现形式。
 
-### JQuery
+## JQuery
 
 类似单页应用的加载方式，好处的就是不会刷新页面，数据不丢失，容易整合提交
 
-#### 路由
+### 路由
 
 考虑到学习成本以及业务流程相对简单，没有使用backbone之类的第三方js管理路由，自己对hash值进行判断来管理路由。首先实现`onhashchange`函数来监控路由变化
 
@@ -50,7 +56,7 @@ tags:
     var urlTemplate = _.template(location.pathname + location.search + '#<%=step%>');
     location.href = urlTemplate({step: 'step-2'});
 
-#### 分页
+### 分页
 
 使用的JQuery的load函数,这个函数从服务端加载html，然后填充在所选dom中，加载完成后执行回调函数进行初始化操作。
 
@@ -58,11 +64,11 @@ tags:
           init();
         });
 
-### Angular
+## Angular
 
 用单页路由的形式也是可以实现的，不过我采用了指令的方式伪装成“分页”来实现。这样也达到了降低耦合性的效果。
 
-#### “分页”
+### “分页”
 
 前面说了，这里使用自定义的指令来做成单个分页，所以页面的切换就变成了控制指令的显示和隐藏，实现方式也很简单，使用`ng-show`通过改变`nowDirective`的值即可
 
@@ -73,7 +79,7 @@ tags:
     </div>
 
 
-#### “路由”
+### “路由”
 
 不过上面只是完成了html的加载，业务逻辑初始化需要借助Angular事件三基友：`$emit,$on,$broadcast`。当指令显示完成时`mainCtrl`用`$broadcast`发出广播给每个指令中的`controller`，指令的`controller`通过`$on`来接收事件并初始化。当前流程完成后用`$emit`向上冒泡通知父`controller`完成页面切换。
 
