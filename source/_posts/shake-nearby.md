@@ -1,17 +1,29 @@
-title: 摇周边申请流程
+title: 那么多“扫一扫”，不妨“摇一摇”——微信“摇一摇周边”功能开发实录
+date: 2015-11-17 23:29:45
 tags:
+- js
+categories: 微信
 ---
+
+这次为了准备一个会议的答题抽奖活动，在这个“二维码扫一扫”泛滥的时代，决定采用微信上比较新颖的一个功能：“摇一摇周边”。简单的说就是打开微信、蓝牙，站在开启的无线设备周边摇一摇，就可以摇到对应的页面，点击可进入。常用场景参考下图，其它用途可以发挥现象~
 
 <!-- more -->
 
+{% asset_img cover.png %}
+
+参考微信提供的官方文档，加上审核填坑时间，前前后后也就几个小时（文档上说审核是1~3个工作日，没想到这么快）。下面就是对整个开发流程的一个记录~
+
 # 准备条件
 * 微信公众号
-* iBeacon设备。http://kf.qq.com/faq/120911VrYVrA150410Y7NjiY.html，这里提供了可选设备列表，设备名称和厂商正确，不过网址已经过时，直接去网上购买就行，价格也就几十一个~
+* iBeacon设备。http://kf.qq.com/faq/120911VrYVrA150410Y7NjiY.html， 这里提供了可选设备列表，设备名称和厂商正确，不过网址已经过时，直接去网上购买就行，价格也就几十块~
+{% asset_img device.png %}
+
 * 开着蓝牙装着微信的智能手机
 
 # 后端配置
 
 申请功能和设备开通“摇一摇周边”功能，和 **后台配置**同时进行。 **都是采用https协议，POST请求，json格式数据。**
+后端配置api写得很清楚，直接摘抄整理了~
 
 ## 功能开通
 
@@ -57,7 +69,7 @@ https://api.weixin.qq.com/shakearound/account/auditstatus?access_token=ACCESS_TO
 
 >[官方文档](http://mp.weixin.qq.com/wiki/13/025f1d471dc999928340161c631c6635.html)
 
-## 设备配置
+## 设备申请
 
 ### 申请设备id
 
@@ -145,17 +157,23 @@ https://api.weixin.qq.com/shakearound/page/update?access_token=ACCESS_TOKEN
 
 # 后台配置
 
-点击左边的 **页面配置** 进行编辑并配置到对应的设备上，一个页面可以配置到多个设备，但是一个设备只能关联到一个页面。同时下载设备列表（一个xls文件）
+这个需要登录微信公众号进行操作，在后端申请成功后，点击左边的 **页面配置** 进行编辑并配置到对应的设备上，一个页面可以配置到多个设备，但是一个设备只能关联到一个页面。
 
 {% asset_img page-config-1.png %}
 
 {% asset_img page-config-2.png %}
 
+同时下载设备列表（一个xls文件）
+{% asset_img device-list.png %}
+
 # 设备配置
 
 微信给出的教程是使用手机软件通过蓝牙连接进行配置，个人偏好用电脑数据线连接配置。从官网上下载一个配置软件，连接设备之后，启动设备读取信息。
 根据上一步得到的设备列表文件，找到之前申请的设备id，将UUID、majorId、minorId写入设备。
+
 {% asset_img device-config.png %}
+
+
 
 # 页面开发
 
@@ -203,8 +221,8 @@ url中传入两个参数：ticket和activityid，activityid暂时未用到，tic
 
 [微信摇一摇周边常见问题解答](http://kf.qq.com/faq/120911VrYVrA150412Izm2qi.html)
 
+>如果觉得阅读这篇文章有收获，不妨点个赞吧^_^
 
-
-http://demo.tijianzhuanjia.com/wx/poster/shake.html?ticket=9255cca12ad1bfc8fcafd0994e7ecdf4&activityid=918458
-
----
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
