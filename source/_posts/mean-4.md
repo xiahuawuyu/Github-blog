@@ -6,6 +6,9 @@ tags:
 categories: node.js
 ---
 
+>原文地址 https://blog.udemy.com/node-js-tutorial
+>感谢来自Udemy的Samantha来信分享
+
 # 添加一个新视频
 
 在这一部分中，你将学习更多关于在Express中创建API端点，利用Angular构建表单，用Monk在Mongo中存储文档。
@@ -183,6 +186,8 @@ categories: node.js
 快速总结一下这一节中学到的知识。我们用Express创建了一个新的API端点然后使用Monk来存储一个视频文档到Mongo。然后，我们创建了一个Angular视图并通过表单添加一个视频。我们通过使用Bootstrap来美化了表单。最后，我们创建控制器来处理视图中的点击事件。在处理点击事件中，我们使用 **$resource**服务来提交数据给服务端。
 
 在下一节中，我们将添加一个编辑功能。
+
+*如果觉得阅读这篇文章有收获，不妨点个赞吧^_^*
 
 - - - 
 博客：http://yalishizhude.github.io
