@@ -1,5 +1,9 @@
-title: mean-4
+title: 【译】基于MEAN的全栈开发实例教程4：实现新增功能
+date: 2015-11-19 10:16:04
 tags:
+  - node.js
+  - mean
+categories: node.js
 ---
 
 # 添加一个新视频
@@ -10,6 +14,8 @@ tags:
 类似于上一节，我们将在随后几步中将从前端到后端实现这一功能。首先，我们将创建一个添加视频的API。我们将使用Express路由创建此端点并用Monk存储视频文件在Mongo中。然后，我们将创建一个新的页面来添加一个视频并用Angular来构建这个页面。
 
 让我们开始吧。
+
+<!-- more -->
 
 ## 第1步：创建1个API端点
 打开 **routes>videos.js** 然后在文件后面和 **module.exports** 前面新增路由（记住，module.exports 应该是模块中的最后一行）：
@@ -157,7 +163,13 @@ tags:
         <textarea class="form-control" ng-model="video.description"></textarea>
     </div>
 
-**ng-model**属性是另一个用来绑定数据的指令。通过它，我们告诉Angular如果用户点击这个按钮，它将执行 **$scope**上的 **save**方法。
+**ng-model**属性是另一个用来绑定数据的指令。通过它，我们告诉Angular如果用户点击这个按钮，它将自动更新引用$scope的属性。在第一个例子中，当文本框的值改变时，Angular将自动修改 **$scope.video.title**。
+
+接下来修改按钮的声明如下：
+
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"></input>
+
+**ng-click**属性也是Angular的另一个用来处理HTML元素点击事件的指令。通过这个指令，我们告诉Angular如果用户点击这个按钮，它将执行 **$scope**上的 **save**方法。
 
 最后在路由中注册一个新的控制器
 
@@ -171,3 +183,7 @@ tags:
 快速总结一下这一节中学到的知识。我们用Express创建了一个新的API端点然后使用Monk来存储一个视频文档到Mongo。然后，我们创建了一个Angular视图并通过表单添加一个视频。我们通过使用Bootstrap来美化了表单。最后，我们创建控制器来处理视图中的点击事件。在处理点击事件中，我们使用 **$resource**服务来提交数据给服务端。
 
 在下一节中，我们将添加一个编辑功能。
+
+- - - 
+博客：http://yalishizhude.github.io
+作者：[亚里士朱德](http://yalishizhude.github.io/about/)
