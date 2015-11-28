@@ -72,7 +72,7 @@ plugins:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/yalishizhude/yalishizhude.github.io.git
+  repo: ssh://git@github.com/yalishizhude/yalishizhude.github.io.git
   branch: master
 
 
