@@ -5,7 +5,8 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
 {% if theme.google_site_verification %}
   <meta name="google-site-verification" content="{{ theme.google_site_verification }}" />
 {% endif %}
