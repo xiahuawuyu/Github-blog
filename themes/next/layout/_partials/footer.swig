@@ -11,6 +11,8 @@
     <i class="icon-heart"></i>
   </span>
   <span class="author">{{ config.author }}</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">{{config.email}}</span>
 </div>
 
 <div class="powered-by" style="visibility:hidden;">
