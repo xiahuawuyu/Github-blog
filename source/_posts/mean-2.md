@@ -37,7 +37,7 @@ Sublime Text 是一个轻量级而且功能强大的代码编辑器。你可以�
 **对于Mac用户**
 打开终端
 
-    $ sudo mkdir -p /data/dbmd 
+    $ sudo mkdir -p /data/db 
     $ whoami
     moshfeghhamedani
     $ sudo chown moshfeghhamedani /data/db

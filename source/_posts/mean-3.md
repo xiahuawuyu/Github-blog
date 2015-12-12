@@ -20,8 +20,8 @@ categories: node.js
 <!-- more -->
 
 ## 第1步：构建数据库
-我们怎么通过数据文件来构建MongoDB数据库？MongoDB有一个可以通过控制台访问的脚本，然而通过脚本访问并不是很友好，所以为了开发变得简单，我们将用到一个免费的工具——RboMongo。登陆到 http://robomong.org 然后下载适合你操作系统的安装程序。
-启动RoboMong。你将看见一个用来连接MongoDB服务器的对话框
+我们怎么通过数据文件来构建MongoDB数据库？MongoDB有一个可以通过控制台访问的脚本，然而通过脚本访问并不是很友好，所以为了开发变得简单，我们将用到一个免费的工具——RboMongo。登陆到 http://robomongo.org 然后下载适合你操作系统的安装程序。
+启动RoboMongo。你将看见一个用来连接MongoDB服务器的对话框
 {% asset_img robomongo-1.png %}
 点击顶部的 **Create**按钮。
 将连接名称改为 **localhost**。注意连接地址指向的是**localhost:27017。默认情况下MongoDB将在27017端口上启动。
