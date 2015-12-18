@@ -60,7 +60,6 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 新建一个本地分支，按照正常流程提交完代码后，推送到远程
 `git push <remote base> <local branch>:<remote branch>`
 
-
 ## 实用指令
 ### reset
 `git reset [file]` 
@@ -174,7 +173,11 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 `git config -1`
 
 ### 设置别名
-`git config --global alias.<name> <commend>`  
+`git config --global alias.<name> <commend>`
+我的设置：
+`git config --global alias.st status`
+`git config --global alias.cm "commit -m"`
+`git config --global alias.ph "push origin <local_repository>:<remote_repository>"`
 
 ### 保存用户名和密码
 
@@ -185,6 +188,12 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 开启windows缓存
 #### 对于ssh协议，可以用ssh  key，具体教程网上很多
 
+### 忽略文件
+默认方法是在当前项目目录下创建一个.gitignore文件，如果需要忽略的文件已经添加到版本库中，请先移除
+`git rm --cached [file]`
+不删除文件，只移除追踪。
+
+### 
 
 [权威教程](http://git-scm.com/book/zh/v2)
 
