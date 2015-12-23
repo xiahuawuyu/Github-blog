@@ -193,9 +193,8 @@ git因为是分布式的，所以其核心就是分支（只有master分支情�
 `git rm --cached [file]`
 不删除文件，只移除追踪。
 
-### 
-
 [权威教程](http://git-scm.com/book/zh/v2)
 
+---
 博客：http://yalishizhude.github.io
 作者：[亚里士朱德](http://yalishizhude.github.io/about/)
